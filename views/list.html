@@ -1,0 +1,7 @@
+<li ng-repeat="item in list | filter: searchList | filter: filterAll | orderBy:['done' , 'id']" class="done-{{item.done}}">
+<input class="tickbox" type="checkbox" ng-model="item.done"><p>{{item.text}}</p>
+  <div class="list-btn-wrapper">
+    <button type="button"  class=" edit doneiconedit-{{item.done}}" ng-click="editBtn(item)"></button>
+    <button type="button" class="delete doneicondelete-{{item.done}}" ng-click="removeItem(item)"></button>
+  </div>
+</li>
