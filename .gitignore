@@ -54,5 +54,6 @@ Temporary Items
 *.jpeg
 *.png
 *.gif
-*psd
-*ai
+*.psd
+*.ai
+*.svg
