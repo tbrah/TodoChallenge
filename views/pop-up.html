@@ -1,0 +1,7 @@
+<div class="popup" ng-class="{popupActive: togglePopUp}">
+
+  <div class="popup-content" ng-switch="fieldSwitch">
+    <add-todo-form ng-switch-when="add"></add-todo-form>
+    <edit-todo-form ng-switch-when="edit"></edit-todo-form>
+  </div>
+</div>

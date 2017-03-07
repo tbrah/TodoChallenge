@@ -1,0 +1,5 @@
+<form ng-submit="addItem()">
+  <input focus-this="{{togglePopUp}}" type="text" ng-model="$parent.listText" required="" placeholder="Enter a todo here">
+  <button type="button" class="add-btn" ng-click="addItem()">Add</button>
+  <button type="button" class="close-btn" ng-click="closePopUp()">x</button>
+</form>

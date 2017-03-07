@@ -1,0 +1,309 @@
+/*======Variables=====*/
+$primary-green:#00A388;
+$primary-white:#FFF;
+
+$success-green:#27ae60;
+$fail-red:#eb3e3e;
+
+$background-cream:#ededeb;
+$background-shadow-effect:rgba(65, 84, 89, 0.22);
+
+/*====Font styles====*/
+$font-opensans:'Open Sans', sans-serif;
+
+$font-dark:#9ba9ae;
+$font-light:#FFF;
+$font-active:#415459;
+
+/*Changes the depth perseption*/
+$depth-margin-effect:10px;
+
+button, input:focus{
+  outline:0;
+}
+
+body{
+  margin:0;
+  font-family:$font-opensans;
+  color:$font-dark;
+  height:100vh;
+}
+button{
+  background-color:transparent;
+  border:none;
+  &:hover{
+    cursor:pointer;
+  }
+
+}
+hr{
+  margin-top:0;
+  margin-bottom:0;
+  margin-left:$depth-margin-effect;
+  margin-right:$depth-margin-effect;
+  border:4px solid $background-shadow-effect;
+}
+.popupActive{
+  display:block!important;
+}
+.popup{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.75);
+  .popup-content {
+    position:relative;
+    margin: 23% auto;
+    width: 50%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    form{
+      display:flex;
+      width:100%;
+      height:50px;
+      input{
+        width:90%;
+        padding:15px;
+        border:1px solid $font-dark;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+    }
+    .add-btn{
+      color:white;
+      margin-left:-5px;
+      padding:15px;
+      background-color:$primary-green;
+      border:1px solid green;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .close-btn{
+      position:absolute;
+      top:-40px;
+      right:-30px;
+      color:$font-light;
+      position:absolute;
+      background-color:$fail-red;
+      border-radius:50%;
+      height:30px;
+      width:30px;
+    }
+    .editarea{
+      display:flex;
+      textarea{
+        width:89%;
+        padding-top:20px;
+        padding-left:20px;
+        padding-right:20px;
+        color:$font-dark;
+        font-family:$font-opensans;
+        border-radius:5px;
+      }
+    }
+    }
+}
+
+.container{
+  width:1170px;
+  padding-left:15px;
+  padding-right:15px;
+  margin:0 auto;
+  .row{
+    width:100%;
+  }
+  .header-wrapper{
+    position:relative;
+    height:25vh;
+    width:100%;
+    background-color:$primary-green;
+    .overlay-img{
+      height:inherit;
+      background-image:url('../img/dots.png');
+      background-position:cover;
+      background-position-y:-50px;
+    }
+    .banner-area{
+      position:absolute;
+      text-align: center;
+      top:15%;
+      width:100%;
+      color:$primary-white;
+      img{
+        width:220px;
+        margin:0 auto;
+      }
+      h1{
+        text-align:center;
+        margin-top:50px;
+      }
+    }
+  }
+  .list-wrapper{
+    position:relative;
+    height:68vh;
+    margin:0 auto;
+    background-color:$background-cream;
+    padding:10px 35px 50px 35px;
+    margin-left:$depth-margin-effect;
+    margin-right:$depth-margin-effect;
+    .filter-wrapper{
+      display:flex;
+      padding-top:10px;
+      border-bottom:1px solid $font-dark;
+      .searchbar{
+        border-radius:30px;
+        border:none;
+        padding:5px 20px 5px 20px;
+        height:30px;
+      }
+      .tooltip{
+        display:none;
+        color:$font-light;
+        position:absolute;
+        padding:10px 10px 5px 10px;
+        border-radius:10px;
+        right:-40px;
+        top:-40px;
+        height:30px;
+        background-color:$font-dark;
+        -webkit-box-shadow: 0px 2px 0px 0px $background-shadow-effect;
+        -moz-box-shadow: 0px 2px 0px 0px $background-shadow-effect;
+        box-shadow: 0px 2px 0px 0px $background-shadow-effect;
+        &:before{
+          content: " ";
+          border-style:solid;
+          border-width: 20px 20px 0 20px;
+          border-color:$font-dark transparent transparent transparent;
+          position:absolute;
+          bottom:-10px;
+          left:45%;
+        }
+      }
+
+      .undo-btn{
+        position:relative;
+        bottom:0;
+        background-image:url(../img/undo-img.svg);
+        background-repeat: no-repeat;
+        background-position:bottom;
+        width:30px;
+        height:30px;
+        margin-left:auto;
+        &:hover~.tooltip{
+          display:block;
+        }
+      }
+      .tabActive{
+        color:$font-active;
+        border-bottom:5px solid $font-active;
+      }
+      h4{
+        padding:10px 30px;
+        margin-bottom:0;
+        margin-top:0;
+        font-weight:600;
+        &:hover{
+          cursor:pointer;
+        }
+      }
+    }
+    .circle-btn{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      margin:0 auto;
+      width:100px;
+      height:100px;
+      background-color:$primary-green;
+      border-radius:25px;
+      margin:0 auto;
+      color:$font-light;
+      font-size:56px;
+      text-align: center;
+      border-radius:50%;
+    }
+    ul{
+      max-height:500px;
+      overflow-y: scroll;
+      overflow-x:hidden;
+      padding:0;
+      .done-true{
+        background-color:$primary-green;
+        color:$font-light;
+        box-shadow: none;
+      }
+      li{
+        display:flex;
+        list-style: none;
+        padding:10px;
+        background-color:#fff;
+        margin-bottom:8px;
+        border:1px solid #d5d5d1;
+        border-radius:10px;
+        -webkit-box-shadow: 0px 2px 0px 0px $background-shadow-effect;
+        -moz-box-shadow: 0px 2px 0px 0px $background-shadow-effect;
+        box-shadow: 0px 2px 0px 0px $background-shadow-effect;
+        p{
+          word-wrap: break-word;
+          display:inline-block;
+          max-width: 85%;
+        }
+        input{
+          height:15px;
+          margin-top:auto;
+          margin-bottom:auto;
+          margin-right:20px;
+        }
+        .list-btn-wrapper{
+          margin-left:auto;
+          margin-top:auto;
+          margin-bottom:auto;
+          height:30px;
+          .edit{
+            display:inline-block;
+            height:25px;
+            width:25px;
+            margin-right:10px;
+            background-image:url('../img/editSprite.png');
+            background-repeat:no-repeat;
+            background-size:50px;
+            background-position-x:0px;
+          }
+          .doneiconedit-true{
+            background-position-x:-27px;
+          }
+          .delete{
+            display:inline-block;
+            height:25px;
+            width:25px;
+            background-image: url('../img/deleteSprite.png');
+            background-repeat: no-repeat;
+            background-size:46px;
+            background-position-x:0px;
+          }
+          .doneicondelete-true{
+            background-position-x:-25px;
+          }
+        }
+      }
+    }
+  }
+}
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {bottom:-100px; opacity:0;}
+    to {bottom:0; opacity:1;}
+}
