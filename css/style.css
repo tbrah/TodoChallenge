@@ -1,0 +1,302 @@
+/*======Variables=====*/
+/*====Font styles====*/
+/*Changes the depth perseption*/
+
+button,
+input:focus {
+    outline: 0;
+}
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    color: #9ba9ae;
+    height: 100vh;
+}
+button {
+    background-color: transparent;
+    border: none;
+}
+button:hover {
+    cursor: pointer;
+}
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 4px solid rgba(65, 84, 89, 0.22);
+}
+.popupActive {
+    display: block !important;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.popup .popup-content {
+    position: relative;
+    margin: 23% auto;
+    width: 50%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+.popup .popup-content form {
+    display: flex;
+    width: 100%;
+    height: 50px;
+}
+.popup .popup-content form input {
+    width: 90%;
+    padding: 15px;
+    border: 1px solid #9ba9ae;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.popup .popup-content .add-btn {
+    color: white;
+    margin-left: -5px;
+    padding: 15px;
+    background-color: #00A388;
+    border: 1px solid green;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.popup .popup-content .close-btn {
+    position: absolute;
+    top: -40px;
+    right: -30px;
+    color: #FFF;
+    position: absolute;
+    background-color: #eb3e3e;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+.popup .popup-content .editarea {
+    display: flex;
+}
+.popup .popup-content .editarea textarea {
+    width: 89%;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #9ba9ae;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 5px;
+}
+.container {
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+.container .row {
+    width: 100%;
+}
+.container .header-wrapper {
+    position: relative;
+    height: 25vh;
+    width: 100%;
+    background-color: #00A388;
+}
+.container .header-wrapper .overlay-img {
+    height: inherit;
+    background-image: url("../img/dots.png");
+    background-position: cover;
+    background-position-y: -50px;
+}
+.container .header-wrapper .banner-area {
+    position: absolute;
+    text-align: center;
+    top: 15%;
+    width: 100%;
+    color: #FFF;
+}
+.container .header-wrapper .banner-area img {
+    width: 220px;
+    margin: 0 auto;
+}
+.container .header-wrapper .banner-area h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+.container .list-wrapper {
+    position: relative;
+    height: 68vh;
+    margin: 0 auto;
+    background-color: #ededeb;
+    padding: 10px 35px 50px 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.container .list-wrapper .filter-wrapper {
+    display: flex;
+    padding-top: 10px;
+    border-bottom: 1px solid #9ba9ae;
+}
+.container .list-wrapper .filter-wrapper .searchbar {
+    border-radius: 30px;
+    border: none;
+    padding: 5px 20px 5px 20px;
+    height: 30px;
+}
+.container .list-wrapper .filter-wrapper .tooltip {
+    display: none;
+    color: #FFF;
+    position: absolute;
+    padding: 10px 10px 5px 10px;
+    border-radius: 10px;
+    right: -40px;
+    top: -40px;
+    height: 30px;
+    background-color: #9ba9ae;
+    -webkit-box-shadow: 0px 2px 0px 0px rgba(65, 84, 89, 0.22);
+    -moz-box-shadow: 0px 2px 0px 0px rgba(65, 84, 89, 0.22);
+    box-shadow: 0px 2px 0px 0px rgba(65, 84, 89, 0.22);
+}
+.container .list-wrapper .filter-wrapper .tooltip:before {
+    content: " ";
+    border-style: solid;
+    border-width: 20px 20px 0 20px;
+    border-color: #9ba9ae transparent transparent transparent;
+    position: absolute;
+    bottom: -10px;
+    left: 45%;
+}
+.container .list-wrapper .filter-wrapper .undo-btn {
+    position: relative;
+    bottom: 0;
+    background-image: url(../img/undo-img.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+}
+.container .list-wrapper .filter-wrapper .undo-btn:hover ~ .tooltip {
+    display: block;
+}
+.container .list-wrapper .filter-wrapper .tabActive {
+    color: #415459;
+    border-bottom: 5px solid #415459;
+}
+.container .list-wrapper .filter-wrapper h4 {
+    padding: 10px 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: 600;
+}
+.container .list-wrapper .filter-wrapper h4:hover {
+    cursor: pointer;
+}
+.container .list-wrapper .circle-btn {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-color: #00A388;
+    border-radius: 25px;
+    margin: 0 auto;
+    color: #FFF;
+    font-size: 56px;
+    text-align: center;
+    border-radius: 50%;
+}
+.container .list-wrapper ul {
+    max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+}
+.container .list-wrapper ul .done-true {
+    background-color: #00A388;
+    color: #FFF;
+    box-shadow: none;
+}
+.container .list-wrapper ul li {
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 8px;
+    border: 1px solid #d5d5d1;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 2px 0px 0px rgba(65, 84, 89, 0.22);
+    -moz-box-shadow: 0px 2px 0px 0px rgba(65, 84, 89, 0.22);
+    box-shadow: 0px 2px 0px 0px rgba(65, 84, 89, 0.22);
+}
+.container .list-wrapper ul li p {
+    word-wrap: break-word;
+    display: inline-block;
+    max-width: 85%;
+}
+.container .list-wrapper ul li input {
+    height: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+}
+.container .list-wrapper ul li .list-btn-wrapper {
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 30px;
+}
+.container .list-wrapper ul li .list-btn-wrapper .edit {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+    background-image: url("../img/editSprite.png");
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position-x: 0px;
+}
+.container .list-wrapper ul li .list-btn-wrapper .doneiconedit-true {
+    background-position-x: -27px;
+}
+.container .list-wrapper ul li .list-btn-wrapper .delete {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    background-image: url("../img/deleteSprite.png");
+    background-repeat: no-repeat;
+    background-size: 46px;
+    background-position-x: 0px;
+}
+.container .list-wrapper ul li .list-btn-wrapper .doneicondelete-true {
+    background-position-x: -25px;
+}
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes animatetop {
+    from {
+        bottom: -100px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+/*# sourceMappingURL=style.css.map */
